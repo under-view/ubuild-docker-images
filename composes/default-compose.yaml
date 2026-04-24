@@ -8,7 +8,7 @@ services:
     volumes:
       - ${DOCKER_WORKSPACE}:${DOCKER_HOME}
       - ${HOME}/.ssh:${DOCKER_HOME}/.ssh:ro
-      - ${HOME}/.gitconfig:${DOCKER_HOME}/.gitconfig:ro
+      - ${HOME}/.gitconfig:${DOCKER_HOME}/.gitconfig:rw
       - ${HOME}/.git-credentials:${DOCKER_HOME}/.git-credentials:ro
       - ${HOME}/.vim:${DOCKER_HOME}/.vim:ro
       - ${HOME}/.vimrc:${DOCKER_HOME}/.vimrc:ro
