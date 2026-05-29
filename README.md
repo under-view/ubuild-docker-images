@@ -70,7 +70,7 @@ $ docker build --no-cache \
 
 ```bash
 $ mkdir -p $(pwd)/docker-images
-$ docker image save -o $(pwd)/docker-images/myimage.tar.xz
+$ docker image save -o $(pwd)/docker-images/myimage.tar.xz "myimage:latest"
 ```
 
 ## Loading Docker Image <a name="loading"></a>
