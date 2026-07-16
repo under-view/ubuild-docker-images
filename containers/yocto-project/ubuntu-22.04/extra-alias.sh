@@ -17,7 +17,9 @@ colored_ip() {
 		-e "s/^\([0-9]\+: \+\)\([^ \t]\+\)/\1${MAGENTA}\2${NORMAL}/g"
 }
 
-alias ifconfig='colored_ip'
+setup_oe_environment() {
+	oe_arg="$1" bash --init-file "/setup-oe-enironment"
+}
 
 alias vi='vim'
 
@@ -33,3 +35,6 @@ alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias ifconfig='colored_ip'
+alias setup-oe-environment='setup_oe_environment'
