@@ -17,3 +17,12 @@ export PARALLEL_MAKE="-j $((core_count / 2))"
 export BB_NUMBER_THREADS=$((core_count / 2))
 
 export BB_ENV_PASSTHROUGH_ADDITIONS="DL_DIR SSTATE_DIR"
+
+for i in /etc/profile.d/*.sh; do
+	if [[ -r "$i" ]]; then
+		. "$i"
+	fi
+done
+unset i
+
+source "${SOURCES_DIR}/openembedded-core/oe-init-build-env" "${BUILD_DIR}"
