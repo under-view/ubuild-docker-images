@@ -1,4 +1,4 @@
-export DISTRO="$1"
+export DISTRO="${oe_arg}"
 
 if [[ -z "${DISTRO}" ]]; then
 	echo "[x] DISTRO not set"
