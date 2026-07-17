@@ -18,7 +18,7 @@ colored_ip() {
 }
 
 setup_oe_environment() {
-	oe_arg="$1" bash --init-file "/setup-oe-enironment"
+	oe_arg="$1" bash --init-file "/setup-oe-environment"
 }
 
 alias vi='vim'

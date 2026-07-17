@@ -32,7 +32,7 @@ COPY extra-alias.sh /etc/profile.d
 COPY extra-env-vars.sh /etc/profile.d
 COPY set-bash-prompt.sh /etc/profile.d
 
-COPY setup-oe-enironment.sh /setup-oe-enironment
+COPY setup-oe-environment.sh /setup-oe-environment
 
 USER $USER_NAME
 
