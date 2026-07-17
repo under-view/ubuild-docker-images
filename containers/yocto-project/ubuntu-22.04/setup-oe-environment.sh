@@ -25,4 +25,4 @@ for i in /etc/profile.d/*.sh; do
 done
 unset i
 
-source "${SOURCES_DIR}/openembedded-core/oe-init-build-env" "${BUILD_DIR}"
+source "$(find "${SOURCES_DIR}" -type f -name "oe-init-build-env")" "${BUILD_DIR}"
