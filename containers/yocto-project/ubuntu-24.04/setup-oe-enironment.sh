@@ -18,6 +18,8 @@ export BB_NUMBER_THREADS=$((core_count / 2))
 
 export BB_ENV_PASSTHROUGH_ADDITIONS="DL_DIR SSTATE_DIR"
 
+export TEMPLATECONF="$(find "${SOURCES_DIR}" -type f -name "local.conf.sample" -printf "%h\n" | sed '/openembedded-core/d')"
+
 for i in /etc/profile.d/*.sh; do
 	if [[ -r "$i" ]]; then
 		. "$i"
