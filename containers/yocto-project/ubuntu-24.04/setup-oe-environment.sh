@@ -25,6 +25,6 @@ export BB_NUMBER_THREADS=$((core_count / 2))
 
 export BB_ENV_PASSTHROUGH_ADDITIONS="DL_DIR SSTATE_DIR"
 
-export TEMPLATECONF="$(find "${SOURCES_DIR}" -type f -name "local.conf.sample" -printf "%h\n" | sed '/openembedded-core/d')"
+export TEMPLATECONF="$(find "${SOURCES_DIR}" -type f -name "local.conf.sample" -printf "%h\n" | grep -w "${DISTRO}")"
 
 source "$(find "${SOURCES_DIR}" -type f -name "oe-init-build-env")" "${BUILD_DIR}"
