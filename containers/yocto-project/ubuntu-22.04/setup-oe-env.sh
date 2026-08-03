@@ -23,7 +23,7 @@ core_count=$(nproc)
 export PARALLEL_MAKE="-j $((core_count / 2))"
 export BB_NUMBER_THREADS=$((core_count / 2))
 
-export BB_ENV_PASSTHROUGH_ADDITIONS="DL_DIR SSTATE_DIR"
+export BB_ENV_PASSTHROUGH_ADDITIONS="DL_DIR SSTATE_DIR SOURCES_DIR"
 
 export TEMPLATECONF="$(find "${SOURCES_DIR}" -type f -name "local.conf.sample" -printf "%h\n" | grep -w "${DISTRO}")"
 
