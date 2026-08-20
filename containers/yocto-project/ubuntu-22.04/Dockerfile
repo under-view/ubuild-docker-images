@@ -28,11 +28,13 @@ RUN groupadd -g $HOST_GID $USER_NAME && \
 RUN echo "$USER_NAME:$USER_NAME" | chpasswd
 RUN adduser $USER_NAME sudo
 
-COPY extra-alias.sh /etc/profile.d
-COPY extra-env-vars.sh /etc/profile.d
-COPY set-bash-prompt.sh /etc/profile.d
+RUN git clone https://github.com/under-view/udock-files.git
 
-COPY setup-oe-env.sh /setup-oe-env
+RUN cp ./udock-files/yocto-project/extra-alias.sh /etc/profile.d
+RUN cp ./udock-files/yocto-project/extra-env-vars.sh /etc/profile.d
+RUN cp ./udock-files/yocto-project/set-bash-prompt.sh /etc/profile.d
+RUN cp ./udock-files/yocto-project/setup-oe-env.sh /setup-oe-env
+RUN rm -rf ./udock-files
 
 USER $USER_NAME
 
